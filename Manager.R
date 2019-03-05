@@ -1,9 +1,10 @@
 setwd("~/../Desktop/RPGManager/")
-for(file in dir("Scripts/Independant/")){
-  source(paste("Scripts/Independant/",file,sep=""))
+if(!("crayon" %in% installed.packages())){install.packages("crayon");library("crayon")}else{library("crayon")}
+for(file in dir("Scripts/Independent/")){
+  source(paste("Scripts/Independent/",file,sep=""))
 }
-for(file in dir("Scripts/Dependant/")){
-  source(paste("Scripts/Dependant/",file,sep=""))
+for(file in dir("Scripts/Dependent/")){
+  source(paste("Scripts/Dependent/",file,sep=""))
 }
 
 ### Below is test code
