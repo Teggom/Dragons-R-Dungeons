@@ -10,22 +10,40 @@ plotTk <- function() {
   rect(-3,60,153,100,col=NA, border = "white")
   text(0,95, paste(Human[["Actor"]][["Stats"]][["Name"]]))
   text(0,90, "HP:")
-  text(20,90, paste(Human[["Actor"]][["Stats"]][["Health"]], "/", Human[["Actor"]][["Stats"]][["Current_Health"]]))
+  text(20,90, paste(Human[["Actor"]][["Stats"]][["Current_Health"]], "/", Human[["Actor"]][["Stats"]][["Health"]]))
   text(0,85, "Strength:")
   text(20,85, Human[["Actor"]][["Stats"]][["Strength"]], col = "blue")
 }
 
-win1 <- tktoplevel()
-tktitle(win1) <- "Game"
 
-Human[["Actor"]][["Stats"]][["Current_Health"]] = 45
+Human <- Create_Functions$Human()
+win1 <- tktoplevel(background = "black")
+tktitle(win1) <- "Game"
 win1$env$plot <- tkrplot(win1, fun = plotTk,
                          hscale = hscale, vscale = vscale)
-tkgrid(win1$env$plot)
-tk2menu(parent = win1$env$plot, activebackground = "black")
-Sys.sleep(1)
-Human[["Actor"]][["Stats"]][["Current_Health"]] = 30
-tkgrid.remove(win1$env$plot)
-win1$env$plot <- tkrplot(win1, fun = plotTk,
-                         hscale = hscale, vscale = vscale)
-tkgrid(win1$env$plot)
+tkpack(win1$env$plot)
+tkpack.forget(win1$env$plot)
+tkplace(win1$env$plot, x = 0, y = 0, relx = 0, rely = 0)
+times <- c()
+Human$Actor$Stats$Current_Health = 0
+toforget <- c()
+for(frame in 1:6000){
+  toforget = c(win1$env$plot$ID, toforget)
+  if(length(toforget)>100){
+    for(each in 5:length(toforget)){
+      tkplace.forget(toforget[each])
+    }
+    toforget = toforget[1:4]
+  }
+  Sys.sleep(.25)
+  .time <- Sys.time()
+  Human[["Actor"]][["Stats"]][["Current_Health"]] = Human$Actor$Stats$Current_Health + 1
+  #tkgrid.remove(win1$env$plot)
+  win1$env$plot <- tkrplot(win1, fun = plotTk,
+                           hscale = hscale, vscale = vscale)
+  #tkplace.forget(toforget)
+  tkplace(win1$env$plot, x = 0, y = 0, relx = 0, rely = 0)
+  times <- c(times, Sys.time() - .time)
+}
+
+
