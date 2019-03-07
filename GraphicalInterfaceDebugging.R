@@ -27,19 +27,20 @@ tkplace(win1$env$plot, x = 0, y = 0, relx = 0, rely = 0)
 times <- c()
 Human$Actor$Stats$Current_Health = 0
 active_windows <- c()
-for(frame in 1:110){
+for(frame in 1:6000){
   active_windows = c(win1$env$plot$ID, active_windows)
   if(length(active_windows)>100){
     forgetting = active_windows[5:length(active_windows)]
     for(each in forgetting){
-      tkplace.forget(each)
+      print(each)
+      tkdestroy(eval(parse(text=paste("win1$env$`",each,"`", sep = ""))))
+    #  tkplace.forget(each)
     }
-    rm(list = forgetting, envir = win1$env)
-    ## ???????? tkdestroy(.x.y) ?????????
+    #rm(list = forgetting, envir = win1$env)
     active_windows = active_windows[1:4]
     #win1$env$num.subwin <- 4
   }
-  Sys.sleep(.1)
+  Sys.sleep(.25)
   .time <- Sys.time()
   Human[["Actor"]][["Stats"]][["Current_Health"]] = Human$Actor$Stats$Current_Health + 1
   #tkgrid.remove(win1$env$plot)
