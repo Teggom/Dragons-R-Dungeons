@@ -1,5 +1,16 @@
 Spell_Manager <- list()
 
+.Spells <- read.csv("~/../Downloads/GameElementData - Spells.csv", stringsAsFactors = F)
+Spell_Manager$Spells <- .Spells
+
+# Given a spell and a stat, returns the value of that
+# Does not apply it to a modifier
+.Get_Spell_Buff <- function(Spell_Name, Stat_Name){
+  row = Spell_Manager$Spells[Spell_Manager$Spells[,3]==Spell_Name,]
+  return(row[,names(row)==Stat_Name])
+}
+Spell_Manager$Get_Buff <- .Get_Spell_Buff
+
 .Make_Player_Magic_Classes <- function(){
   To_Return <- list(
     # name = list(level, exp_to_level)

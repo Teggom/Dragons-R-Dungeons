@@ -19,7 +19,11 @@ Entity_IDs <- c()
       "Spells" = list(),
       "Items" = list(),
       "MagicClasses" = list(),
-      "General" = list()
+      "General" = list(),
+      "Active_Spells" = list(
+        "Short" = list(),
+        "Long" = list()
+      )
     )
   )
   ret$Actor$ID <- ID
@@ -45,6 +49,28 @@ Entity_IDs <- c()
   ret$Actor$Skills = Skills_Manager$Make_Skill_List()
   
   ret$Actor$Spells = Spell_Manager$Create()
+  
+  ret$Actor$Items = list(Equipment = list(), Items = list(), Key = list())
+  
+  ret$Actor$Active_Items = list(
+    "Short" = list(),
+    "Long" = list()
+  )
+  
+  ret$Actor$Gear = list(
+    Head = "",
+    Back = "",
+    Neck = "",
+    Chest = "",
+    Arms = "",
+    Hand_R = "", 
+    Hand_L = "",
+    Belt = "",
+    Legs = "",
+    Feet = "",
+    Accessory_1 = "",
+    Accessory_2 = ""
+  )
   
   return(ret)
 }
