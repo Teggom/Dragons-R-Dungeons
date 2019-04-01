@@ -2,6 +2,7 @@ Level_Up_Actor <- list()
 
 .Human_Function <- function(Human){
   new = Human
+  
   # Adventurer
   if(Human[["Actor"]][["Stats"]][["Class"]]=="Adventurer"){
     # Strength

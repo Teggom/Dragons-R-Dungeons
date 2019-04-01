@@ -7,12 +7,20 @@ plotTk <- function() {
   par(bg = "black", bty = 'n', mar=c(0,0,0,0))
   plot(c(0,150),c(0,100), type = 'n', xlim = c(0,150), ylim = c(0,100))
   par(cex=1.5, adj = 0, col = "white", bg = "#FFFFFF", bty = "n")
+
   rect(-3,60,153,100,col=NA, border = "white")
   text(0,95, paste(Human[["Actor"]][["Stats"]][["Name"]]))
   text(0,90, "HP:")
   text(20,90, paste(Human[["Actor"]][["Stats"]][["Current_Health"]], "/", Human[["Actor"]][["Stats"]][["Health"]]))
   text(0,85, "Strength:")
   text(20,85, Human[["Actor"]][["Stats"]][["Strength"]], col = "blue")
+  #for(boxx in 1:35){
+  #  for(boxy in 1:35){
+  #    rect(boxx*3+40, boxy*3, boxx*3+42, boxy*3+2, col = "white", border = "white")
+  #  }
+  #}
+  # Stress testing, mean of sample size 60 -> .114 seconds to render 35x35 objects
+ 
 }
 
 
@@ -27,7 +35,7 @@ tkplace(win1$env$plot, x = 0, y = 0, relx = 0, rely = 0)
 times <- c()
 Human$Actor$Stats$Current_Health = 0
 active_windows <- c()
-for(frame in 1:6000){
+for(frame in 1:60){
   active_windows = c(win1$env$plot$ID, active_windows)
   if(length(active_windows)>100){
     forgetting = active_windows[5:length(active_windows)]

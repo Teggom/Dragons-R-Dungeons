@@ -8,31 +8,47 @@ Entity_IDs <- c()
 
 
 ### human
-.Create_Human <- function(){
+.Create_Player <- function(){
   ID = length(Entity_IDs)
   Entity_IDs <<- c(Entity_IDs, ID)
-  ret <- list("Actor" = list("Stats" = list()))
- 
-  ret[["Actor"]][["ID"]] <- ID
-  ret[["Actor"]][["Stats"]][["Race"]] <- "Human"
-  ret[["Actor"]][["Stats"]][["Class"]] <- "Adventurer"
-  ret[["Actor"]][["Stats"]][["Level"]] <- 1
-  ret[["Actor"]][["Stats"]][["Name"]] <- Create_Name[["Human"]]()
-  ret[["Actor"]][["Stats"]][["Age"]] <- sample(x = 18:25, size = 1)
-  ret[["Actor"]][["Stats"]][["Sex"]] <- sample(x = c("Male", "Female"), size = 1)
-  ret[["Actor"]][["Stats"]][["Health"]] <- sample(x = 10:15, size = 1)
-  ret[["Actor"]][["Stats"]][["Mana"]] <- sample(x = 5:8, size = 1)
-  ret[["Actor"]][["Stats"]][["Current_Health"]] <- ret[["Actor"]][["Stats"]][["Health"]]
-  ret[["Actor"]][["Stats"]][["Current_Mana"]] <- ret[["Actor"]][["Stats"]][["Mana"]]
-  ret[["Actor"]][["Stats"]][["Strength"]] <- sample(x = 3:5, size = 1)
-  ret[["Actor"]][["Stats"]][["Dexterity"]] <- sample(x = 3:5, size = 1)
-  ret[["Actor"]][["Stats"]][["Speed"]] <- sample(x = 3:5, size = 1)
-  ret[["Actor"]][["Stats"]][["Intelligence"]] <- sample(x = 3:5, size = 1)
-  ret[["Actor"]][["Skills"]] <- list()
-  ret[["Actor"]][["Spells"]] <- list()
+  ret <- list(
+    "Actor" = list(
+      "Stats" = list(),
+      "Gear" = list(),
+      "Skills" = list(),
+      "Spells" = list(),
+      "Items" = list(),
+      "MagicClasses" = list(),
+      "General" = list()
+    )
+  )
+  ret$Actor$ID <- ID
+  ret$Actor$General$Race = "Human"
+  ret$Actor$General$Class = "Adventurer"
+  ret$Actor$General$Level = 1
+  ret$Actor$General$Name = Create_Name[["Human"]]()
+  ret$Actor$General$Age = sample(x = 18:30, size = 1)
+  ret$Actor$General$Sex = sample(x = c("Male", "Female"), size = 1)
+  ret$Actor$Stats$Strength = sample(x = 18:25, size = 1)
+  ret$Actor$Stats$Dexterity = sample(x = 18:25, size = 1)
+  ret$Actor$Stats$Intelligence = sample(x = 18:25, size = 1)
+  ret$Actor$Stats$Wisdom = sample(x = 18:25, size = 1)
+  ret$Actor$Stats$Charisma = sample(x = 18:25, size = 1)
+  ret$Actor$Stats$Constitution = sample(x = 18:25, size = 1)
+  ret$Actor$Stats$Luck = 11
+  
+  ret$Actor$Stats$Max_Health = 30 + max(0,Modif[["General_Stats"]](ret$Actor$Stats$Constitution))
+  ret$Actor$Stats$Cur_Health = ret$Actor$Stats$Max_Health
+  ret$Actor$Stats$Max_Mana = 20 + max(0,Modif[["General_Stats"]]((ret$Actor$Stats$Wisdom+ret$Actor$Stats$Intelligence)/2))
+  ret$Actor$Stats$Cur_Mana = ret$Actor$Stats$Max_Mana
+  
+  ret$Actor$Skills = Skills_Manager$Make_Skill_List()
+  
+  ret$Actor$Spells = Spell_Manager$Create()
+  
   return(ret)
 }
-Create_Functions[["Human"]] <- .Create_Human
+Create_Functions[["Human"]] <- .Create_Player
 
 
 Humans <- list()
