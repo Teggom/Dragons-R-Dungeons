@@ -18,7 +18,9 @@ WINDOWSTATE <- list(
   KeyPressed = "",
   PressedTime = Sys.time(),
   TimePressedInterval = .5,
-  INPUT = F
+  INPUT = F,
+  Window_Variables = list(),
+  Player = ""
 )
 
 # Example Choices 
@@ -152,6 +154,24 @@ tkbind(GameWindow, "<Key-Right>",
          }
        }
 )
+tkbind(GameWindow, "<Key-Up>", 
+       function(){
+         if(Sys.time()-WINDOWSTATE$PressedTime>WINDOWSTATE$TimePressedInterval){
+           WINDOWSTATE$KeyPressed <<- "Up"
+           WINDOWSTATE$PressedTime <<- Sys.time()
+           WINDOWSTATE$INPUT <<- T
+         }
+       }
+)
+tkbind(GameWindow, "<Key-Down>", 
+       function(){
+         if(Sys.time()-WINDOWSTATE$PressedTime>WINDOWSTATE$TimePressedInterval){
+           WINDOWSTATE$KeyPressed <<- "Down"
+           WINDOWSTATE$PressedTime <<- Sys.time()
+           WINDOWSTATE$INPUT <<- T
+         }
+       }
+)
 tkbind(GameWindow, "<Key-Escape>", 
        function(){
          if(Sys.time()-WINDOWSTATE$PressedTime>WINDOWSTATE$TimePressedInterval){
@@ -161,7 +181,57 @@ tkbind(GameWindow, "<Key-Escape>",
          }
        }
 )
+tkbind(GameWindow, "<Key-Return>", 
+       function(){
+         if(Sys.time()-WINDOWSTATE$PressedTime>WINDOWSTATE$TimePressedInterval){
+           WINDOWSTATE$KeyPressed <<- "Enter"
+           WINDOWSTATE$PressedTime <<- Sys.time()
+           WINDOWSTATE$INPUT <<- T
+         }
+       }
+)
 tktitle(GameWindow) <- "The Great Quest"
+
+BuildFrameCharacterSelect <- function(){
+  print("CharacterSelect")
+  par(bg = "black", bty = 'n', mar=c(0,0,0,0))
+  plot(c(0,150),c(0,100), type = 'n', xlim = c(0,150), ylim = c(0,100))
+  par(cex=1.5, adj = 0, col = "white", bg = "#FFFFFF", bty = "n")
+  text(50, 94, "Character Select", cex = 2.5)
+  index = 80
+  for(each in WINDOWSTATE$Window_Variables$Classes){
+    text(10, index, each)
+    index = index-5
+  }
+  lines(9, 80-((WINDOWSTATE$Window_Variables$Pointer_Index-1)*5), col = "white", type = "p")
+  # print class info
+  selected = WINDOWSTATE$Window_Variables$Classes[WINDOWSTATE$Window_Variables$Pointer_Index]
+  text(70, 80, paste("Class: ", selected))
+  if(selected == "Warrior"){
+    text(72, 75, "Level: 5")
+    text(72, 70, "Race: Human")
+    text(72, 65, "Strength:")
+    text(100, 65, "A")
+    text(72, 60, "Dexterity:")
+    text(100, 60, "C")
+    text(72, 55, "Constitution:")
+    text(100, 55, "A")
+    text(72, 50, "Intelligence:")
+    text(100, 50, "D")
+    text(72, 45, "Wisdom:")
+    text(100, 45, "D")
+    text(72, 40, "Charisma:")
+    text(100, 40, "D")
+    text(72, 34, "Starting Gear: Warrior Gear")
+    text(72, 29, "Starting Spells: Warrior Buffs")
+    text(72, 20, "The warrior. A powerful rippling ball of muscle.")
+    text(72, 15, "With a sword in hand nothing can stand in his way.")
+    text(72, 10, "The warrior will need to use their wits to")
+    text(72, 5, "overcome the challenges that lie ahead.")
+  } else {
+    text(80, 75, "<Unknown>")
+  }
+}
 
 # Main Menu Frame Function
 BuildFrameMainMenu <- function(){
@@ -222,6 +292,11 @@ BuildFrameEvent <- function(){
 PackFrame <- function(){
   
   WINDOWSTATE$OldFrames <<- c(WINDOWSTATE$OldFrames, GameWindow$env$plot$ID)
+  
+  if(WINDOWSTATE$Current_Window=="Character_Select"){
+    GameWindow$env$plot <<- tkrplot(GameWindow, fun = BuildFrameCharacterSelect,
+                                    hscale = hscale, vscale = vscale)
+  }
   
   if(WINDOWSTATE$Current_Window=="Main_Menu"){
     GameWindow$env$plot <<- tkrplot(GameWindow, fun = BuildFrameMainMenu,

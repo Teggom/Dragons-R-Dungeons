@@ -1,7 +1,10 @@
 Print_Stats <- list()
 
 .Print_Human_Stats <- function(Human){
-  writeLines(paste("ID : ", Human[["Actor"]][["ID"]]))
+  writeLines(paste("ID :   ", Human[["Actor"]][["ID"]]))
+  writeLines(paste("Name:  ", Human$Actor$General$Name))
+  writeLines(paste("Class: ", Human$Actor$General$Class))
+  writeLines(paste("Level: ", Human$Actor$General$Level))
   cat("Health:\t", Human$Actor$Stats$Cur_Health, "/", Human$Actor$Stats$Max_Health, "\n")
   cat("Mana:  \t", Human$Actor$Stats$Cur_Mana, "/", Human$Actor$Stats$Max_Mana, "\n")
   for(stat in names(Human$Actor$Stats)){

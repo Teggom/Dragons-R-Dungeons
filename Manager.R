@@ -15,3 +15,6 @@ cat("Files Loaded Properly\n")
 #   Main Menu, Credits, Quit
 #   Start Crashes the game
 Game_Start()
+
+# TODO: fix error on button imput > constant
+# TODO: Fix up menu
