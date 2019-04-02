@@ -77,13 +77,13 @@ Entity_IDs <- c()
 Create_Functions[["Human"]] <- .Create_Player
 
 
-Humans <- list()
-for(.each in 1:5){
-  Humans <- append(Humans, Create_Functions[["Human"]]())
-}
-
+#Humans <- list()
+#for(.each in 1:5){
+#  Humans <- append(Humans, Create_Functions[["Human"]]())
+#}
+#
 Human <- Create_Functions[["Human"]]()
-Leveled_Human <- Level_Up_Actor[["Human"]](Human)
+#Leveled_Human <- Level_Up_Actor[["Human"]](Human)
 
 
 
