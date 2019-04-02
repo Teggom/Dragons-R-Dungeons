@@ -1,4 +1,4 @@
-# Rpg-manageR
+# Dragons-R-Dungeons
 An in development text based RPG game written in R. 
 
 VERSION: 1.0.0
