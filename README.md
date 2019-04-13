@@ -1,7 +1,7 @@
 # Dragons-R-Dungeons
 An in development text based RPG game written in R. 
 
-VERSION: 1.0.1
+VERSION: 1.0.2
 
 HOW TO RUN:
 set the working directory in Manager.R to wherever you pulled this repo to
