@@ -18,7 +18,7 @@ WINDOWSTATE <- list(
   ),
   KeyPressed = "",
   PressedTime = Sys.time(),
-  TimePressedInterval = .5,
+  TimePressedInterval = .2,
   INPUT = F,
   Window_Variables = list(),
   Player = "",
@@ -194,9 +194,9 @@ PackFrame <- function(){
 Clean_Frames <- function(){
   Verbose_Print(3, "Cleaning Frame Function Starting")
   for(ID in WINDOWSTATE$OldFrames){
-    Verbose_Print(4, paste("About to destroy", ID))
-    Verbose_Print(4, paste("Destroy string is:", paste("GameWindow$env$`", ID, "`", sep = "")))
-    Verbose_Print(4, paste("This Evaluates to: ", eval(parse(text=paste("GameWindow$env$`", ID, "`", sep = "")))))
+    Verbose_Print(2, paste("About to destroy", ID))
+    Verbose_Print(2, paste("Destroy string is:", paste("GameWindow$env$`", ID, "`", sep = "")))
+    Verbose_Print(2, paste("This Evaluates to: ", eval(parse(text=paste("GameWindow$env$`", ID, "`", sep = "")))))
     tkdestroy(eval(parse(text=paste("GameWindow$env$`", ID, "`", sep = ""))))
     # Note:
     #  There's a lot of issues that stem from deleting the old frames. 

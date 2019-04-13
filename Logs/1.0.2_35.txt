@@ -1,0 +1,72 @@
+Created Log:  Logs/1.0.2_35.txt
+Verbosity:    2
+sysname Windows
+release >= 8 x64
+version build 9200
+machine x86-64
+	Game Starting
+	Packing the frame
+	Building Main Menu Frame
+	Input recieved
+KEYPRESS: 1
+	Checking Main Menu Input
+	Checking Character Select Input
+	Packing the frame
+	About to destroy .2.2
+	Destroy string is: GameWindow$env$`.2.2`
+	This Evaluates to:  .2.2
+	This Evaluates to:  <environment>
+	Input recieved
+KEYPRESS: Enter
+	Checking Character Select Input
+	Packing the frame
+	Building Switch Frame
+	About to destroy .2.3
+	Destroy string is: GameWindow$env$`.2.3`
+	This Evaluates to:  .2.3
+	This Evaluates to:  <environment>
+	Input recieved
+KEYPRESS: Up
+	Checking Switch Menu Input
+	Packing the frame
+	Building Switch Frame
+	About to destroy .2.5
+	Destroy string is: GameWindow$env$`.2.5`
+	This Evaluates to:  .2.5
+	This Evaluates to:  <environment>
+	Input recieved
+KEYPRESS: Up
+	Checking Switch Menu Input
+	Packing the frame
+	Building Switch Frame
+	About to destroy .2.7
+	Destroy string is: GameWindow$env$`.2.7`
+	This Evaluates to:  .2.7
+	This Evaluates to:  <environment>
+	Input recieved
+KEYPRESS: Up
+	Checking Switch Menu Input
+	Packing the frame
+	Building Switch Frame
+	About to destroy .2.9
+	Destroy string is: GameWindow$env$`.2.9`
+	This Evaluates to:  .2.9
+	This Evaluates to:  <environment>
+	Input recieved
+KEYPRESS: Up
+	Checking Switch Menu Input
+	Packing the frame
+	Building Switch Frame
+	About to destroy .2.11
+	Destroy string is: GameWindow$env$`.2.11`
+	This Evaluates to:  .2.11
+	This Evaluates to:  <environment>
+	Input recieved
+KEYPRESS: Up
+	Checking Switch Menu Input
+	Packing the frame
+	Building Switch Frame
+	About to destroy .2.13
+	Destroy string is: GameWindow$env$`.2.13`
+	This Evaluates to:  .2.13
+	This Evaluates to:  <environment>

@@ -13,8 +13,9 @@ Game_Version <- "1.0.2"
 # Level 4: Records steps in function calls
 # Level 5: For specific debugging (Should be cleaned up after)
 # Toggling this causes things to be printed to a file. 
-# 
-Verbosity <- 3
+
+### IMPORTANT: VERBOSITY MUST BE KEPT AT 4 RIGHT NOW TO PREVENT A BUG
+Verbosity <- 4
 if(Verbosity >= 0){
   # Creates the next file for this version
   # Format:   "Game_Version-Log_Number.txt
