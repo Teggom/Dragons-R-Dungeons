@@ -6,6 +6,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.2] - 1019-04-13
+### Added
+- Verbose setting for game running
+- Bags and item menu + functions for sorting
+- Switch menu: for use between Events. This is where you manage your inventory 
+	-  Bag View Only for now, can't select it
+- Text for the other 3 classes
+- Randomly selected items
+- Game Version as a thing in game
+- Game Verson now on menu
+
+### Fixed
+- Keyboard input is now managed by a button hidden offscreen and focused to
+- Fatal Error: ButtonProc called on invalid HWND (Finally)
+	- see note in WindowManager.R/Clean_Frames() 
+
 ## [1.0.1] - 2019-04-01
 ### Added
 - Character Select menu

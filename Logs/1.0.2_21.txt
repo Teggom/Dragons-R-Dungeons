@@ -1,0 +1,895 @@
+Created Log:  Logs/1.0.2_21.txt
+Verbosity:    5
+sysname Windows
+release >= 8 x64
+version build 9200
+machine x86-64
+		Creating Human Name
+	Game Starting
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Main Menu Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+			Leaving PackFrame
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: 1
+	Checking Main Menu Input
+	Checking Character Select Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+		In character Select menu builder
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Returned from Setup call
+		Adding Character_Select_Vanity
+			Returned from Vanity_Character_Select() Call
+			Selected: Warrior
+		Warrior Vanity
+			Leaving Character Select Frame Builder
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+				About to destroy .2.2
+				Destroy Command is: GameWindow$env$`.2.2`
+				This Evaluates to:  .2.2
+				This Evaluates to:  <environment>
+			Destroyed old frame, ID: .2.2
+				time: 0.0239920616149902
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Enter
+	Checking Character Select Input
+		Creating Human Name
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Switch Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+				About to destroy .2.3
+				Destroy Command is: GameWindow$env$`.2.3`
+				This Evaluates to:  .2.3
+				This Evaluates to:  <environment>
+			Destroyed old frame, ID: .2.3
+				time: 0.0439860820770264
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Up
+	Checking Switch Menu Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Switch Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+				About to destroy .2.5
+				Destroy Command is: GameWindow$env$`.2.5`
+				This Evaluates to:  .2.5
+				This Evaluates to:  <environment>
+			Destroyed old frame, ID: .2.5
+				time: 0.0319910049438477
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Up
+	Checking Switch Menu Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Switch Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+				About to destroy .2.7
+				Destroy Command is: GameWindow$env$`.2.7`
+				This Evaluates to:  .2.7
+				This Evaluates to:  <environment>
+			Destroyed old frame, ID: .2.7
+				time: 0.0209929943084717
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Up
+	Checking Switch Menu Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Switch Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+				About to destroy .2.9
+				Destroy Command is: GameWindow$env$`.2.9`
+				This Evaluates to:  .2.9
+				This Evaluates to:  <environment>
+			Destroyed old frame, ID: .2.9
+				time: 0.0199930667877197
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Up
+	Checking Switch Menu Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Switch Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+				About to destroy .2.11
+				Destroy Command is: GameWindow$env$`.2.11`
+				This Evaluates to:  .2.11
+				This Evaluates to:  <environment>
+			Destroyed old frame, ID: .2.11
+				time: 0.0409870147705078
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Up
+	Checking Switch Menu Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Switch Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+				About to destroy .2.13
+				Destroy Command is: GameWindow$env$`.2.13`
+				This Evaluates to:  .2.13
+				This Evaluates to:  <environment>
+			Destroyed old frame, ID: .2.13
+				time: 0.0209920406341553
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Up
+	Checking Switch Menu Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Switch Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+				About to destroy .2.15
+				Destroy Command is: GameWindow$env$`.2.15`
+				This Evaluates to:  .2.15
+				This Evaluates to:  <environment>
+			Destroyed old frame, ID: .2.15
+				time: 0.0249910354614258
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Up
+	Checking Switch Menu Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Switch Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+				About to destroy .2.17
+				Destroy Command is: GameWindow$env$`.2.17`
+				This Evaluates to:  .2.17
+				This Evaluates to:  <environment>
+			Destroyed old frame, ID: .2.17
+				time: 0.0259931087493896
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Up
+	Checking Switch Menu Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Switch Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+				About to destroy .2.19
+				Destroy Command is: GameWindow$env$`.2.19`
+				This Evaluates to:  .2.19
+				This Evaluates to:  <environment>
+			Destroyed old frame, ID: .2.19
+				time: 0.0229918956756592
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Up
+	Checking Switch Menu Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Switch Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+				About to destroy .2.21
+				Destroy Command is: GameWindow$env$`.2.21`
+				This Evaluates to:  .2.21
+				This Evaluates to:  <environment>
+			Destroyed old frame, ID: .2.21
+				time: 0.053983211517334
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Up
+	Checking Switch Menu Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Switch Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+				About to destroy .2.23
+				Destroy Command is: GameWindow$env$`.2.23`
+				This Evaluates to:  .2.23
+				This Evaluates to:  <environment>
+			Destroyed old frame, ID: .2.23
+				time: 0.0399880409240723
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Up
+	Checking Switch Menu Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Switch Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+				About to destroy .2.25
+				Destroy Command is: GameWindow$env$`.2.25`
+				This Evaluates to:  .2.25
+				This Evaluates to:  <environment>
+			Destroyed old frame, ID: .2.25
+				time: 0.041985034942627
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Up
+	Checking Switch Menu Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Switch Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+				About to destroy .2.27
+				Destroy Command is: GameWindow$env$`.2.27`
+				This Evaluates to:  .2.27
+				This Evaluates to:  <environment>
+			Destroyed old frame, ID: .2.27
+				time: 0.0199930667877197
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Up
+	Checking Switch Menu Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Switch Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+				About to destroy .2.29
+				Destroy Command is: GameWindow$env$`.2.29`
+				This Evaluates to:  .2.29
+				This Evaluates to:  <environment>
+			Destroyed old frame, ID: .2.29
+				time: 0.0219929218292236
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Up
+	Checking Switch Menu Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Switch Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+				About to destroy .2.31
+				Destroy Command is: GameWindow$env$`.2.31`
+				This Evaluates to:  .2.31
+				This Evaluates to:  <environment>
+			Destroyed old frame, ID: .2.31
+				time: 0.0329890251159668
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Up
+	Checking Switch Menu Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Switch Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+				About to destroy .2.33
+				Destroy Command is: GameWindow$env$`.2.33`
+				This Evaluates to:  .2.33
+				This Evaluates to:  <environment>
+			Destroyed old frame, ID: .2.33
+				time: 0.0449860095977783
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Up
+	Checking Switch Menu Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Switch Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+				About to destroy .2.35
+				Destroy Command is: GameWindow$env$`.2.35`
+				This Evaluates to:  .2.35
+				This Evaluates to:  <environment>
+			Destroyed old frame, ID: .2.35
+				time: 0.0339899063110352
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Up
+	Checking Switch Menu Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Switch Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+				About to destroy .2.37
+				Destroy Command is: GameWindow$env$`.2.37`
+				This Evaluates to:  .2.37
+				This Evaluates to:  <environment>
+			Destroyed old frame, ID: .2.37
+				time: 0.0419869422912598
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Up
+	Checking Switch Menu Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Switch Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+				About to destroy .2.39
+				Destroy Command is: GameWindow$env$`.2.39`
+				This Evaluates to:  .2.39
+				This Evaluates to:  <environment>
+			Destroyed old frame, ID: .2.39
+				time: 0.0399870872497559
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Up
+	Checking Switch Menu Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Switch Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+				About to destroy .2.41
+				Destroy Command is: GameWindow$env$`.2.41`
+				This Evaluates to:  .2.41
+				This Evaluates to:  <environment>
+			Destroyed old frame, ID: .2.41
+				time: 0.0279908180236816
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Up
+	Checking Switch Menu Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Switch Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+				About to destroy .2.43
+				Destroy Command is: GameWindow$env$`.2.43`
+				This Evaluates to:  .2.43
+				This Evaluates to:  <environment>
+			Destroyed old frame, ID: .2.43
+				time: 0.0209918022155762
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Up
+	Checking Switch Menu Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Switch Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+				About to destroy .2.45
+				Destroy Command is: GameWindow$env$`.2.45`
+				This Evaluates to:  .2.45
+				This Evaluates to:  <environment>
+			Destroyed old frame, ID: .2.45
+				time: 0.0409870147705078
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Up
+	Checking Switch Menu Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Switch Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+				About to destroy .2.47
+				Destroy Command is: GameWindow$env$`.2.47`
+				This Evaluates to:  .2.47
+				This Evaluates to:  <environment>
+			Destroyed old frame, ID: .2.47
+				time: 0.0419869422912598
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Up
+	Checking Switch Menu Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Switch Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+				About to destroy .2.49
+				Destroy Command is: GameWindow$env$`.2.49`
+				This Evaluates to:  .2.49
+				This Evaluates to:  <environment>
+			Destroyed old frame, ID: .2.49
+				time: 0.0359880924224854
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Up
+	Checking Switch Menu Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Switch Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+				About to destroy .2.51
+				Destroy Command is: GameWindow$env$`.2.51`
+				This Evaluates to:  .2.51
+				This Evaluates to:  <environment>
+			Destroyed old frame, ID: .2.51
+				time: 0.0219931602478027
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Up
+	Checking Switch Menu Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Switch Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+				About to destroy .2.53
+				Destroy Command is: GameWindow$env$`.2.53`
+				This Evaluates to:  .2.53
+				This Evaluates to:  <environment>
+			Destroyed old frame, ID: .2.53
+				time: 0.0329911708831787
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Up
+	Checking Switch Menu Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Switch Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+				About to destroy .2.55
+				Destroy Command is: GameWindow$env$`.2.55`
+				This Evaluates to:  .2.55
+				This Evaluates to:  <environment>
+			Destroyed old frame, ID: .2.55
+				time: 0.0229921340942383
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Up
+	Checking Switch Menu Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Switch Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+				About to destroy .2.57
+				Destroy Command is: GameWindow$env$`.2.57`
+				This Evaluates to:  .2.57
+				This Evaluates to:  <environment>
+			Destroyed old frame, ID: .2.57
+				time: 0.0229911804199219
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Up
+	Checking Switch Menu Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Switch Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+				About to destroy .2.59
+				Destroy Command is: GameWindow$env$`.2.59`
+				This Evaluates to:  .2.59
+				This Evaluates to:  <environment>
+			Destroyed old frame, ID: .2.59
+				time: 0.0309889316558838
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Up
+	Checking Switch Menu Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Switch Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+				About to destroy .2.61
+				Destroy Command is: GameWindow$env$`.2.61`
+				This Evaluates to:  .2.61
+				This Evaluates to:  <environment>
+			Destroyed old frame, ID: .2.61
+				time: 0.0429861545562744
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on

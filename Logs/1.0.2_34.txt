@@ -1,0 +1,19 @@
+Created Log:  Logs/1.0.2_34.txt
+Verbosity:    5
+sysname Windows
+release >= 8 x64
+version build 9200
+machine x86-64
+		Creating Human Name
+	Game Starting
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Main Menu Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+			Leaving PackFrame

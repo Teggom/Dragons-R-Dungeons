@@ -1,0 +1,60 @@
+		In Setup Function
+			Created Plot
+			Leaving Setup
+		In character Select menu builder
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Returned from Setup call
+			Returned from Vanity_Character_Select() Call
+			Selected: Warrior
+			Leaving Character Select Frame Builder
+		In character Select menu builder
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Returned from Setup call
+			Returned from Vanity_Character_Select() Call
+			Selected: Mage
+			Leaving Character Select Frame Builder
+		In character Select menu builder
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Returned from Setup call
+			Returned from Vanity_Character_Select() Call
+			Selected: Thief
+			Leaving Character Select Frame Builder
+		In character Select menu builder
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Returned from Setup call
+			Returned from Vanity_Character_Select() Call
+			Selected: Bard
+			Leaving Character Select Frame Builder
+		In character Select menu builder
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Returned from Setup call
+			Returned from Vanity_Character_Select() Call
+			Selected: Thief
+			Leaving Character Select Frame Builder
+		In character Select menu builder
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Returned from Setup call
+			Returned from Vanity_Character_Select() Call
+			Selected: Mage
+			Leaving Character Select Frame Builder
+		In Setup Function
+			Created Plot
+			Leaving Setup
+		In Setup Function
+			Created Plot
+			Leaving Setup
+		In Setup Function
+			Created Plot
+			Leaving Setup

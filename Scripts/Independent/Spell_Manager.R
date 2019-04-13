@@ -1,7 +1,7 @@
 Spell_Manager <- list()
 
-#.Spells <- read.csv("~/../Downloads/GameElementData - Spells.csv", stringsAsFactors = F)
-#Spell_Manager$Spells <- .Spells
+.Spells <- read.csv("Files/GameElementData - Spells .csv", stringsAsFactors = F)
+Spell_Manager$Spells <- .Spells
 
 # Given a spell and a stat, returns the value of that
 # Does not apply it to a modifier

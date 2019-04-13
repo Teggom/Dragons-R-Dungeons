@@ -4,6 +4,7 @@ Create_Name <- list()
 .CONSONANTS <- toupper(.consonants)
 
 .Human_Name <- function(){
+  Verbose_Print(3, "Creating Human Name")
   Name <- paste(sample(x = .CONSONANTS, size = 1), sample(x = .vowels, size = 1), sep = "")
   NameDone = F
   while(!NameDone){

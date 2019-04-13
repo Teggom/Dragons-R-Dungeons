@@ -30,6 +30,7 @@ Entity_IDs <- c()
   ret$Actor$General$Race = "Human"
   ret$Actor$General$Class = "Adventurer"
   ret$Actor$General$Level = 1
+  ret$Actor$General$Gold = 0
   ret$Actor$General$Name = Create_Name[["Human"]]()
   ret$Actor$General$Age = sample(x = 18:30, size = 1)
   ret$Actor$General$Sex = sample(x = c("Male", "Female"), size = 1)
@@ -50,7 +51,7 @@ Entity_IDs <- c()
   
   ret$Actor$Spells = Spell_Manager$Create()
   
-  ret$Actor$Items = list(Equipment = list(), Items = list(), Key = list())
+  ret$Actor$Items = list()
   
   ret$Actor$Active_Items = list(
     "Short" = list(),

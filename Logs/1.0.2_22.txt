@@ -1,0 +1,173 @@
+Created Log:  Logs/1.0.2_22.txt
+Verbosity:    5
+sysname Windows
+release >= 8 x64
+version build 9200
+machine x86-64
+		Creating Human Name
+	Game Starting
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Main Menu Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+			Leaving PackFrame
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: 1
+	Checking Main Menu Input
+	Checking Character Select Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+		In character Select menu builder
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Returned from Setup call
+		Adding Character_Select_Vanity
+			Returned from Vanity_Character_Select() Call
+			Selected: Warrior
+		Warrior Vanity
+			Leaving Character Select Frame Builder
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Up
+	Checking Character Select Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+		In character Select menu builder
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Returned from Setup call
+		Adding Character_Select_Vanity
+			Returned from Vanity_Character_Select() Call
+			Selected: Warrior
+		Warrior Vanity
+			Leaving Character Select Frame Builder
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Up
+	Checking Character Select Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+		In character Select menu builder
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Returned from Setup call
+		Adding Character_Select_Vanity
+			Returned from Vanity_Character_Select() Call
+			Selected: Warrior
+		Warrior Vanity
+			Leaving Character Select Frame Builder
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Up
+	Checking Character Select Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+		In character Select menu builder
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Returned from Setup call
+		Adding Character_Select_Vanity
+			Returned from Vanity_Character_Select() Call
+			Selected: Warrior
+		Warrior Vanity
+			Leaving Character Select Frame Builder
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Enter
+	Checking Character Select Input
+		Creating Human Name
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Switch Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting
+			Leaving PackFrame
+			Frame Packed
+			About to toggle keys on
+			Keys on
+	Input recieved
+			About to turn keys off
+			Keys Turned Off
+KEYPRESS: Up
+	Checking Switch Menu Input
+		About to pack the frame
+	Packing the frame
+			Adding Frame to Old Frame
+			Setting plot in GameWindow
+	Building Switch Frame
+		In Setup Function
+			Created Plot
+			Leaving Setup
+			Plot set, now placing
+			Placed, now recording ID of current frame
+			Added
+		Cleaning up old frames
+		Cleaning Frame Function Starting

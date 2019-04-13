@@ -5,6 +5,7 @@ Window_Manager <- list()
 
 # Create Global Window Variables
 WINDOWSTATE <- list(
+  Down = F,
   Current_Window = "Main_Menu",
   EventText = list(),
   OldFrames = c(),
@@ -20,8 +21,21 @@ WINDOWSTATE <- list(
   TimePressedInterval = .5,
   INPUT = F,
   Window_Variables = list(),
-  Player = ""
+  Player = "",
+  BUTTONON = F
 )
+
+.Setup <- function(){
+  Verbose_Print(3, "In Setup Function")
+  par(bg = "black", bty = 'n', mar=c(0,0,0,0))
+  plot(c(0,150),c(0,100), type = 'n', xlim = c(0,150), ylim = c(0,100))
+  
+  Verbose_Print(4,"Created Plot")
+  
+  par(cex=1.5, adj = 0, col = "white", bg = "#FFFFFF", bty = "n")
+  Verbose_Print(4, "Leaving Setup")
+}
+Window_Manager[["Setup"]] <- .Setup
 
 # Example Choices 
 WINDOWSTATE$Options$Generated = list(
@@ -43,224 +57,66 @@ WINDOWSTATE$EventText = list(
   "I Am, The Foo Bar"
 )
 
-# Create Game Window and give it a title
-# Also define Keys here
-GameWindow <- tktoplevel(background = "black")
-tkbind(GameWindow, "<Key-1>", 
-       function(){
-         if(Sys.time()-WINDOWSTATE$PressedTime>WINDOWSTATE$TimePressedInterval){
-           WINDOWSTATE$KeyPressed <<- "1"
-           WINDOWSTATE$PressedTime <<- Sys.time()
-           WINDOWSTATE$INPUT <<- T
-         }
-       }
-)
-tkbind(GameWindow, "<Key-2>", 
-       function(){
-         if(Sys.time()-WINDOWSTATE$PressedTime>WINDOWSTATE$TimePressedInterval){
-           WINDOWSTATE$KeyPressed <<- "2"
-           WINDOWSTATE$PressedTime <<- Sys.time()
-           WINDOWSTATE$INPUT <<- T
-         }
-       }
-)
-tkbind(GameWindow, "<Key-3>", 
-       function(){
-         if(Sys.time()-WINDOWSTATE$PressedTime>WINDOWSTATE$TimePressedInterval){
-           WINDOWSTATE$KeyPressed <<- "3"
-           WINDOWSTATE$PressedTime <<- Sys.time()
-           WINDOWSTATE$INPUT <<- T
-         }
-       }
-)
-tkbind(GameWindow, "<Key-4>", 
-       function(){
-         if(Sys.time()-WINDOWSTATE$PressedTime>WINDOWSTATE$TimePressedInterval){
-           WINDOWSTATE$KeyPressed <<- "4"
-           WINDOWSTATE$PressedTime <<- Sys.time()
-           WINDOWSTATE$INPUT <<- T
-         }
-       }
-)
-tkbind(GameWindow, "<Key-5>", 
-       function(){
-         if(Sys.time()-WINDOWSTATE$PressedTime>WINDOWSTATE$TimePressedInterval){
-           WINDOWSTATE$KeyPressed <<- "5"
-           WINDOWSTATE$PressedTime <<- Sys.time()
-           WINDOWSTATE$INPUT <<- T
-         }
-       }
-)
-tkbind(GameWindow, "<Key-6>", 
-       function(){
-         if(Sys.time()-WINDOWSTATE$PressedTime>WINDOWSTATE$TimePressedInterval){
-           WINDOWSTATE$KeyPressed <<- "6"
-           WINDOWSTATE$PressedTime <<- Sys.time()
-           WINDOWSTATE$INPUT <<- T
-         }
-       }
-)
-tkbind(GameWindow, "<Key-7>", 
-       function(){
-         if(Sys.time()-WINDOWSTATE$PressedTime>WINDOWSTATE$TimePressedInterval){
-           WINDOWSTATE$KeyPressed <<- "7"
-           WINDOWSTATE$PressedTime <<- Sys.time()
-           WINDOWSTATE$INPUT <<- T
-         }
-       }
-)
-tkbind(GameWindow, "<Key-8>", 
-       function(){
-         if(Sys.time()-WINDOWSTATE$PressedTime>WINDOWSTATE$TimePressedInterval){
-           WINDOWSTATE$KeyPressed <<- "8"
-           WINDOWSTATE$PressedTime <<- Sys.time()
-           WINDOWSTATE$INPUT <<- T
-         }
-       }
-)
-tkbind(GameWindow, "<Key-9>", 
-       function(){
-         if(Sys.time()-WINDOWSTATE$PressedTime>WINDOWSTATE$TimePressedInterval){
-           WINDOWSTATE$KeyPressed <<- "9"
-           WINDOWSTATE$PressedTime <<- Sys.time()
-           WINDOWSTATE$INPUT <<- T
-         }
-       }
-)
-tkbind(GameWindow, "<Key-0>", 
-       function(){
-         if(Sys.time()-WINDOWSTATE$PressedTime>WINDOWSTATE$TimePressedInterval){
-           WINDOWSTATE$KeyPressed <<- "0"
-           WINDOWSTATE$PressedTime <<- Sys.time()
-           WINDOWSTATE$INPUT <<- T
-         }
-       }
-)
-tkbind(GameWindow, "<Key-Left>", 
-       function(){
-         if(Sys.time()-WINDOWSTATE$PressedTime>WINDOWSTATE$TimePressedInterval){
-           WINDOWSTATE$KeyPressed <<- "Left"
-           WINDOWSTATE$PressedTime <<- Sys.time()
-           WINDOWSTATE$INPUT <<- T
-         }
-       }
-)
-tkbind(GameWindow, "<Key-Right>", 
-       function(){
-         if(Sys.time()-WINDOWSTATE$PressedTime>WINDOWSTATE$TimePressedInterval){
-           WINDOWSTATE$KeyPressed <<- "Right"
-           WINDOWSTATE$PressedTime <<- Sys.time()
-           WINDOWSTATE$INPUT <<- T
-         }
-       }
-)
-tkbind(GameWindow, "<Key-Up>", 
-       function(){
-         if(Sys.time()-WINDOWSTATE$PressedTime>WINDOWSTATE$TimePressedInterval){
-           WINDOWSTATE$KeyPressed <<- "Up"
-           WINDOWSTATE$PressedTime <<- Sys.time()
-           WINDOWSTATE$INPUT <<- T
-         }
-       }
-)
-tkbind(GameWindow, "<Key-Down>", 
-       function(){
-         if(Sys.time()-WINDOWSTATE$PressedTime>WINDOWSTATE$TimePressedInterval){
-           WINDOWSTATE$KeyPressed <<- "Down"
-           WINDOWSTATE$PressedTime <<- Sys.time()
-           WINDOWSTATE$INPUT <<- T
-         }
-       }
-)
-tkbind(GameWindow, "<Key-Escape>", 
-       function(){
-         if(Sys.time()-WINDOWSTATE$PressedTime>WINDOWSTATE$TimePressedInterval){
-           WINDOWSTATE$KeyPressed <<- "Esc"
-           WINDOWSTATE$PressedTime <<- Sys.time()
-           WINDOWSTATE$INPUT <<- T
-         }
-       }
-)
-tkbind(GameWindow, "<Key-Return>", 
-       function(){
-         if(Sys.time()-WINDOWSTATE$PressedTime>WINDOWSTATE$TimePressedInterval){
-           WINDOWSTATE$KeyPressed <<- "Enter"
-           WINDOWSTATE$PressedTime <<- Sys.time()
-           WINDOWSTATE$INPUT <<- T
-         }
-       }
-)
-tktitle(GameWindow) <- "The Great Quest"
 
 BuildFrameCharacterSelect <- function(){
-  print("CharacterSelect")
-  par(bg = "black", bty = 'n', mar=c(0,0,0,0))
-  plot(c(0,150),c(0,100), type = 'n', xlim = c(0,150), ylim = c(0,100))
-  par(cex=1.5, adj = 0, col = "white", bg = "#FFFFFF", bty = "n")
+  #print("CharacterSelect")
+  Verbose_Print(3, "In character Select menu builder")
+  Window_Manager$Setup()
+  Verbose_Print(4, "Returned from Setup call")
+  
   text(50, 94, "Character Select", cex = 2.5)
   index = 80
+  Text_Manager$Vanity_Character_Select()
+  Verbose_Print(4, "Returned from Vanity_Character_Select() Call")
   for(each in WINDOWSTATE$Window_Variables$Classes){
     text(10, index, each)
     index = index-5
   }
-  lines(9, 80-((WINDOWSTATE$Window_Variables$Pointer_Index-1)*5), col = "white", type = "p")
+  lines(7, 80-((WINDOWSTATE$Window_Variables$Pointer_Index-1)*5), col = "white", type = "p")
+  lines(6.6, 80-((WINDOWSTATE$Window_Variables$Pointer_Index-1)*5), col = "white", type = "p")
   # print class info
   selected = WINDOWSTATE$Window_Variables$Classes[WINDOWSTATE$Window_Variables$Pointer_Index]
-  text(70, 80, paste("Class: ", selected))
+  text(72, 80, "Class: ")
+  text(130, 80, selected)
+  Verbose_Print(4, paste("Selected:", selected))
   if(selected == "Warrior"){
-    text(72, 75, "Level: 5")
-    text(72, 70, "Race: Human")
-    text(72, 65, "Strength:")
-    text(100, 65, "A")
-    text(72, 60, "Dexterity:")
-    text(100, 60, "C")
-    text(72, 55, "Constitution:")
-    text(100, 55, "A")
-    text(72, 50, "Intelligence:")
-    text(100, 50, "D")
-    text(72, 45, "Wisdom:")
-    text(100, 45, "D")
-    text(72, 40, "Charisma:")
-    text(100, 40, "D")
-    text(72, 34, "Starting Gear: Warrior Gear")
-    text(72, 29, "Starting Spells: Warrior Buffs")
-    text(72, 20, "The warrior. A powerful rippling ball of muscle.")
-    text(72, 15, "With a sword in hand nothing can stand in his way.")
-    text(72, 10, "The warrior will need to use their wits to")
-    text(72, 5, "overcome the challenges that lie ahead.")
+    Text_Manager$Warrior()
+  } else if(selected == "Mage"){
+    Text_Manager$Mage()
+  } else if(selected == "Thief"){
+    Text_Manager$Thief()
+  } else if(selected == "Bard"){
+    Text_Manager$Bard()
   } else {
     text(80, 75, "<Unknown>")
   }
+  Verbose_Print(4, "Leaving Character Select Frame Builder")
+}
+
+# in between events function
+BuildFrameSwitch <- function(){
+  Verbose_Print(2, "Building Switch Frame")
+  Window_Manager$Setup()
+  Text_Manager$Switch_Menu()
 }
 
 # Main Menu Frame Function
 BuildFrameMainMenu <- function(){
-  par(bg = "black", bty = 'n', mar=c(0,0,0,0))
-  plot(c(0,150),c(0,100), type = 'n', xlim = c(0,150), ylim = c(0,100))
-  par(cex=1.5, adj = 0, col = "white", bg = "#FFFFFF", bty = "n")
-  text(x = 20, y = 80, "Dungeons `R` Dragons", cex = 3) 
-  text(x = 30, y = 50, "[1] - Start")
-  text(x = 30, y = 42, "[2] - Credits")
-  text(x = 30, y = 34, "[3] - Quit")
+  Verbose_Print(2, "Building Main Menu Frame")
+  Window_Manager$Setup()
+  Text_Manager$Main_Menu()
 }
 
 BuildFrameCredits <- function(){
-  par(bg = "black", bty = 'n', mar=c(0,0,0,0))
-  plot(c(0,150),c(0,100), type = 'n', xlim = c(0,150), ylim = c(0,100))
-  par(cex=1.5, adj = 0, col = "white", bg = "#FFFFFF", bty = "n")
-  text(x = 60, y = 80, "Credits", cex = 2.5)
-  text(x = 20, y = 55, "Almost Everything:          Stephen Kozak")
-  text(x = 20, y = 48, "Ideas:                             Philip, Chett")
-  text(x = 20, y = 41, "Special Thanks:            Ian B Page")
-  text(x = 20, y = 30, "     And thank `YOU` for playing!")
-  text(x = 50, y = 10, "Press [1] to go back")
+  Verbose_Print(2, "Building Credits Frame")
+  Window_Manager$Setup()
+  Text_Manager$Credits()
 }
 
 # Build Frame Function
 BuildFrameEvent <- function(){
-  par(bg = "black", bty = 'n', mar=c(0,0,0,0))
-  plot(c(0,150),c(0,100), type = 'n', xlim = c(0,150), ylim = c(0,100))
-  par(cex=1.5, adj = 0, col = "white", bg = "#FFFFFF", bty = "n")
+  Verbose_Print(2, "Building Event Frame")
+  Window_Manager$Setup()
   rect(-3,60,153,100,col=NA, border = "white")
   linedepth = 95
   # Length of EventText <= 7
@@ -290,8 +146,15 @@ BuildFrameEvent <- function(){
 
 # Adds the frame to the game
 PackFrame <- function(){
-  
+  Verbose_Print(2, "Packing the frame")
+  Verbose_Print(4, "Adding Frame to Old Frame")
   WINDOWSTATE$OldFrames <<- c(WINDOWSTATE$OldFrames, GameWindow$env$plot$ID)
+  
+  Verbose_Print(4, "Setting plot in GameWindow")
+  if(WINDOWSTATE$Current_Window=="Switch_Menu"){
+    GameWindow$env$plot <<- tkrplot(GameWindow, fun = BuildFrameSwitch,
+                                    hscale = hscale, vscale = vscale)
+  }
   
   if(WINDOWSTATE$Current_Window=="Character_Select"){
     GameWindow$env$plot <<- tkrplot(GameWindow, fun = BuildFrameCharacterSelect,
@@ -310,12 +173,18 @@ PackFrame <- function(){
     GameWindow$env$plot <<- tkrplot(GameWindow, fun = BuildFrameEvent,
                                     hscale = hscale, vscale = vscale)
   }
+  Verbose_Print(4, "Plot set, now placing")
   tkplace(GameWindow$env$plot, x = 0, y = 0, relx = 0, rely = 0)
+  Verbose_Print(4, "Placed, now recording ID of current frame")
   WINDOWSTATE$CurrentFrame <<- GameWindow$env$plot$ID
   # Arbitrary value, just want to avoid lag during cleanup
-  if(length(WINDOWSTATE$OldFrames) > 3){
+  Verbose_Print(4, "Added")
+  # Setting to 0 to see what happens
+  if(length(WINDOWSTATE$OldFrames) > 0){
+    Verbose_Print(3, "Cleaning up old frames")
     Clean_Frames()
   }
+  Verbose_Print(4, "Leaving PackFrame")
 }
 
 
@@ -323,17 +192,38 @@ PackFrame <- function(){
 
 # Garbage Cleanup Function
 Clean_Frames <- function(){
+  Verbose_Print(3, "Cleaning Frame Function Starting")
   for(ID in WINDOWSTATE$OldFrames){
+    Verbose_Print(4, paste("About to destroy", ID))
+    Verbose_Print(4, paste("Destroy string is:", paste("GameWindow$env$`", ID, "`", sep = "")))
+    Verbose_Print(4, paste("This Evaluates to: ", eval(parse(text=paste("GameWindow$env$`", ID, "`", sep = "")))))
     tkdestroy(eval(parse(text=paste("GameWindow$env$`", ID, "`", sep = ""))))
+    # Note:
+    #  There's a lot of issues that stem from deleting the old frames. 
+    #  The most notable is the `Fatal Error: ButtonProc called on an invalid HWND`
+    #  This issue has plagued the early stages of development and caused
+    #  me many hours of trying to see what or where the issue came from. 
+    #  I finally singled down the issue to tkdestroy, and while debugging
+    #  came to find that for whatever reason, calling verbose print three times
+    #  caused the error rate to drop to near zero, and cannot replicate it anymore.
+    #  Perhaps with a deeper understanding of TK I could find an adiquate solution
+    #  or something I could put here that does not result in a "cheap" fix, 
+    #  but as I've been messing with this for about two weeks now this will 
+    #  do for now :^)
   }
+  Verbose_Print(4, paste("All old frames destroyed"))
   WINDOWSTATE$OldFrames <<- c()
 }
 
 SetUpWindow <- function(){
+  Verbose_Print(2, "Setting up window")
   GameWindow$env$plot <- tkrplot(GameWindow, fun = BuildFrameEvent, 
                                  hscale = hscale, vscale = vscale)
+  Verbose_Print(4, "Plotted Base Game")
   tkpack(GameWindow$env$plot)
+  Verbose_Print(4, "Packed Base Frame")
   tkpack.forget(GameWindow$env$plot)
+  Verbose_Print(4, "Forgot Base Frame")
 }
 
 #WINDOWSTATE$EventText <- list("Game is Good", "Game is great!")

@@ -1,0 +1,10 @@
+Created Log:  Logs/1.0.2_4.txt
+Verbosity:    4
+sysname Windows
+release >= 8 x64
+version build 9200
+nodename DESKTOP-RTH5PC7
+machine x86-64
+login Stephen Kozak
+user Stephen Kozak
+effective_user Stephen Kozak
