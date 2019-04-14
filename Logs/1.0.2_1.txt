@@ -1,3 +1,0 @@
-Created Log Logs/1.0.2_1.txt
-Hello
-Created Log:  Logs/1.0.2_1.txt

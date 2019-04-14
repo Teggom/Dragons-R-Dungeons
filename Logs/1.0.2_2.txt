@@ -1,2 +1,0 @@
-Created Log:  Logs/1.0.2_2.txt
-Verbosity:    4
