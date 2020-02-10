@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.3] - 2020-02-10
+### Status
+- Pushing changes from last time I worked seriously on the project in preparation to get back into it. 
+- Redesigned how Menu will look
+- Redesigned how events will function
+
+
+
 ## [1.0.2] - 1019-04-13
 ### Added
 - Verbose setting for game running

@@ -4,7 +4,7 @@ if(!("tcltk2" %in% installed.packages())){install.packages("tcltk2");library("tc
 if(!("tkrplot" %in% installed.packages())){install.packages("tkrplot");library("tkrplot")}else{library("tkrplot")}
 if(!("raster" %in% installed.packages())){install.packages("raster");library("raster")}else{library("raster")}
 
-Game_Version <- "1.0.2"
+Game_Version <- "1.0.3"
 # Verbose Level 0->5
 # Level 0: Nothing is kept, no file is created
 # Level 1: Makes a note of key presses

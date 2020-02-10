@@ -190,17 +190,18 @@ Text_Manager[["Credits"]] <- .Credits
     text(33, 87.35, "[2]", col = {if(WINDOWSTATE$Window_Variables$Sort_Type=="2"){"yellow"}else{"grey"}})
     text(41, 87.35, "[3]", col = {if(WINDOWSTATE$Window_Variables$Sort_Type=="3"){"yellow"}else{"grey"}})
     
-    text(35, 82.5, {
+    text(20, 82.5, {
       if(WINDOWSTATE$Window_Variables$Sort_Type=="1"){"Gear"}
       else if(WINDOWSTATE$Window_Variables$Sort_Type=="2"){"Consumables"}
       else if(WINDOWSTATE$Window_Variables$Sort_Type=="3"){"Key Items"}
-    }, col = "white", adj = c(.5,NA))
+    }, col = "white", adj = c(0,NA))
+    text(50, 82.5, paste(WINDOWSTATE$Window_Variables$Bag_Info$Cur_Depth, 
+                         WINDOWSTATE$Window_Variables$Bag_Info$Max_Depth, sep = "/"), col = "white", adj = c(1, NA))
+    lines(c(50.2, 50.2, 50.4, 50.4), c(0,90,90,0), col = "white")
+    lines(c(18.8, 50.2, 50.2, 18.8), c(80.2,80.2,80,80), col = "white")
     
-    lines(c(50.2, 50.2, 50.5, 50.5), c(0,90,90,0), col = "white")
-    lines(c(18.8, 50.2, 50.2, 18.8), c(80.3,80.3,80,80), col = "white")
-    
-    text(19.5, 77.5, {if(WINDOWSTATE$Window_Variables$Bag_Info$Cur_Depth==1){"[4] - Bottom"}else{"[4] - Page Up"}}, col = "darkgray")
-    text(19.5, 2.5, {if(WINDOWSTATE$Window_Variables$Bag_Info$Cur_Depth==WINDOWSTATE$Window_Variables$Bag_Info$Max_Depth){"[5] - Top"}else{"[4] - Page Down"}}, col = "darkgray")
+    text(19.5, 77.5, {if(WINDOWSTATE$Window_Variables$Bag_Info$Cur_Depth==1){"[4] - <Nothing>"}else{"[4] - Page Up"}}, col = "darkgray")
+    text(19.5, 2.5, {if(WINDOWSTATE$Window_Variables$Bag_Info$Cur_Depth==WINDOWSTATE$Window_Variables$Bag_Info$Max_Depth){"[5] - <Nothing>"}else{"[5] - Page Down"}}, col = "darkgray")
     
     # Gear
     Character_Manager$Prime_Bag()
@@ -223,13 +224,244 @@ Text_Manager[["Credits"]] <- .Credits
         if(nchar(name)>14){
            name = paste(substr(name, 1, 14), "...", sep = "")
         }
-        text(19.5, 77.5-each*5, name)
+        # print bag contents, red if selected
+        text(19.5, 77.5-each*5, name, col = {
+          if(WINDOWSTATE$Window_Variables$Bag_Cursor_Spot==each){
+            if(WINDOWSTATE$Window_Variables$Cursor_Spot=="Bag"){
+              "red"
+            } else {
+              "white"
+            }
+          } else {
+            if(WINDOWSTATE$Window_Variables$Cursor_Spot!="Bag"){
+              "gray16"
+            } else {
+              "white"
+            }
+          }
+        })
       }
     } else {
       text(19, 72.5, "<Empty>", col = "grey")
     }
+    
+    # Player Equipment menu
+    text(51.2, 87.5, "Player", cex = 1.3)
+    text(51.2, 82.5, "Equipment", cex = 1.3)
+    Player_Gear_Spots <- c("Head", "Neck", "Back", "Chest", "Arms", "Hand (L)", "Hand (R)", "Belt", "Legs", "Feet", "Accessory 1", "Accessory 2")
+    for(spot in 1:length(Player_Gear_Spots)){
+      text(51.2, 82.5-spot*5, Player_Gear_Spots[spot],
+          col = {
+            if(WINDOWSTATE$Window_Variables$Cursor_Spot == "Equip"){
+             if(WINDOWSTATE$Window_Variables$Equip_Cursor_Spot == spot){
+               "red"
+              } else {
+               "white"
+              } 
+            } else {
+              if(WINDOWSTATE$Window_Variables$Equip_Cursor_Spot == spot){
+               "white"
+              } else {
+               "grey16"
+              }
+            }
+          }
+          )
+      lines(c(50.5, 74), c(80-spot*5, 80-spot*5), col = "grey")
+    }
+    lines(c(74, 74, 74.3, 74.3), c(0, 90,90,0), col = "white")
+    lines(c(50.5, 74, 74, 50.5), c(80.2, 80.2, 80, 80), col = "white")
+    
+    
+    
+    
     # Item Stats
-
+    if(WINDOWSTATE$Window_Variables$Cursor_Spot == "Select"){
+      if(WINDOWSTATE$Window_Variables$Select_Cursor_Spot == 1){
+      # Select: Bag
+        text(112.15, 80, "A fun menu", adj = c(NA, .5))
+        text(112.15, 75, "where you can", adj = c(NA, .5))
+        text(112.15, 70, "see your gear!", adj = c(NA, .5))
+      } else if(WINDOWSTATE$Window_Variables$Select_Cursor_Spot == 2){
+      # Select: Spells
+        
+      } else if(WINDOWSTATE$Window_Variables$Select_Cursor_Spot == 3){
+      # Select: Stats
+        
+      } else if(WINDOWSTATE$Window_Variables$Select_Cursor_Spot == 4){
+      # Select: Continue
+        text(112.15, 75, "Continue to next event!", adj = c(NA, .5))
+      } else if(WINDOWSTATE$Window_Variables$Select_Cursor_Spot == 5){
+      # Select: Save
+        text(112.15, 75, "Save your game!", adj = c(NA, .5))
+      } else if(WINDOWSTATE$Window_Variables$Select_Cursor_Spot == 6){
+      # Select: Quit
+        text(112.15, 75, "Quit the game.", adj = c(NA, .5))
+      }
+      
+    } else if(WINDOWSTATE$Window_Variables$Cursor_Spot == "Bag" && WINDOWSTATE$Window_Variables$Sort_Type == "1"){
+      # Select: Bag: Sort_1
+      lines(c(74.3, 150, 150, 74.3), c(80.2, 80.2, 80, 80), col = "white")
+      lines(c(74.3, 112.15), c(65, 65), col = "grey")
+      lines(c(74.3, 112.15), c(75, 75), col = "grey")
+      lines(c(112.15, 112.15), c(80, 0), col = "grey")
+      lines(c(74.3, 112.15), c(30, 30), col = "grey")
+      text(75.3, 87, "Name:")
+      text(75.3, 83, "Tier:")
+      text(75.3, 77.5, "Slot:")
+      text(75.3, 72.5, "Attack:")
+      text(75.3, 67.5, "Defense:")
+      text(75.3, 62.5, "Weapon Type: ")
+      text(75.3, 57.5, "Weight:")
+      text(75.3, 52.5, "Cost:")
+      text(75.3, 47.5, "Durability:")
+      text(75.3, 27.5, "Info:")
+      ## TODO: Print Stats
+      Selected_Item <- WINDOWSTATE$Window_Variables$Bag_Info$Bags[[
+        # which sort type results in which bag
+        switch(as.numeric(WINDOWSTATE$Window_Variables$Sort_Type), "Gear", "Consumables", "Key")
+      ]][[
+        # which selection from the bag are we seeing (Groupings of 14ish)
+        WINDOWSTATE$Window_Variables$Bag_Info$Cur_Depth
+      ]][
+        # which index in that selected bag are we at
+        WINDOWSTATE$Window_Variables$Bag_Cursor_Spot
+      ][[1]] # and [[1]] to devaluate the list
+      text(149, 87, Selected_Item, adj = c(1,NA))
+      text(149, 83, Item_Manager$Get_Tier(Selected_Item), adj = c(1, NA))
+      text(111.15, 77.5, Item_Manager$Get_Slot(Selected_Item), adj = c(1, NA))
+      text(111.15, 72.5, Item_Manager$Get_Attack(Selected_Item), adj = c(1, NA))
+      text(111.15, 67.5, Item_Manager$Get_Defense(Selected_Item), adj = c(1, NA))
+      text(111.15, 62.5, Item_Manager$Get_Weapon_Type(Selected_Item), adj = c(1, NA))
+      text(111.15, 57.5, Item_Manager$Get_Weight(Selected_Item), adj = c(1, NA))
+      text(111.15, 52.5, Item_Manager$Get_Cost(Selected_Item), adj = c(1, NA))
+      text(111.15, 47.5, Item_Manager$Get_Durability(Selected_Item), adj = c(1, NA))
+      for(index in 1:length(Item_Manager$Prime_Text(Selected_Item))){
+        text(75.3, 27.5-index*5, Item_Manager$Prime_Text(Selected_Item)[[index]])
+      }
+      # show boosts
+      Boosts <- Item_Manager$Get_Boosts(Selected_Item)
+      if(length(Boosts)>0){
+        for(B_index in 1:length(Boosts)){
+          text(113.15, 82.5-B_index*5, Boosts[[B_index]][1])
+          text(149, 82.5-B_index*5, Boosts[[B_index]][[2]], adj = c(1, NA))
+        }
+      } else {
+        text(113.15, 77.5, "<No Boosts>", col = "grey16")
+      }
+    } else if(WINDOWSTATE$Window_Variables$Cursor_Spot=="Equip"){
+    # Select: Bag: Equip
+      text(75.3, 87, "Best Slot?")
+      text(75.3, 83, "Efficiency:")
+      
+      # get current slot selected
+      Selected_Slot <- switch(WINDOWSTATE$Window_Variables$Equip_Cursor_Spot,
+                                  "Head", "Neck", "Back", "Chest", "Arms",
+                                  "Hand (L)", "Hand (R)", 
+                                  "Belt", "Legs", "Feet",
+                                  "Accessory 1", "Accessory 2")
+      # get current gear slot
+      Selected_Item <- WINDOWSTATE$Window_Variables$Bag_Info$Bags[[
+        # which sort type results in which bag
+        switch(as.numeric(WINDOWSTATE$Window_Variables$Sort_Type), "Gear", "Consumables", "Key")
+        ]][[
+          # which selection from the bag are we seeing (Groupings of 14ish)
+          WINDOWSTATE$Window_Variables$Bag_Info$Cur_Depth
+        ]][
+          # which index in that selected bag are we at
+          WINDOWSTATE$Window_Variables$Bag_Cursor_Spot
+        ][[1]] # and [[1]] to devaluate the list
+      # efficiency is multipliled by all values of the item. 
+      # if the item is in the correct slot, it yields full value
+      # otherwise it yields reduced value
+      # weight is not effected by this
+      # Non integer numbers are floored
+      efficiency = 0
+      if(grepl(Item_Manager$Get_Slot(Selected_Item), Selected_Slot)){
+        text(149,87,"Yes", col = "green", adj = c(1,NA))
+        text(149,83,"100%", col = "lightgreen", adj = c(1,NA))
+        efficiency = 1
+      } else {
+        text(149,87,"No", col = "red", adj = c(1, NA))
+        text(149,83,"50%", col = "darksalmon", adj = c(1,NA))
+        efficiency = .5
+      }
+      #get currently equip gear 
+      Current_Gear <- WINDOWSTATE$Player$Actor$Gear[[WINDOWSTATE$Window_Variables$Equip_Cursor_Spot]]
+      
+      Effs <- Character_Manager$Get_Efficiency()
+      
+      lines(c(74.3, 150, 150, 74.3), c(80.2, 80.2, 80, 80), col = "white")
+      lines(c(112.15, 112.15), c(80, 0), col = "grey")
+      lines(c(74.3,150), c(70,70), col = "grey")
+      text(75.3, 77.5, "Attack:")
+      text(75.3, 72.5, "Defense:")
+      text(113.15, 77.5, "Weight:")
+      text(113.15, 72.5, "Tier:")      
+      if(Current_Gear == ""){
+        # if no gear worn, set as 0 and increase
+        text(111.15, 77.5, paste("0", floor(efficiency*as.numeric(
+          Item_Manager$Get_Attack(Selected_Item)
+        )), sep = " -> "), adj = c(1, NA),
+        col = {if(floor(efficiency*as.numeric(Item_Manager$Get_Attack(Selected_Item)))==0){
+          "grey30"
+        } else {
+          "green"
+        }})
+        text(111.15, 72.5, paste("0", floor(efficiency*as.numeric(
+          Item_Manager$Get_Defense(Selected_Item)
+        )), sep = " -> "), adj = c(1, NA),
+        col = {if(floor(efficiency*as.numeric(Item_Manager$Get_Defense(Selected_Item)))==0){
+          "grey30"
+        } else {
+          "green"
+        }})
+        text(149, 77.5, paste("0", floor(as.numeric(
+          Item_Manager$Get_Weight(Selected_Item)
+        )), sep = " -> "), adj = c(1, NA),
+        col = {if(floor(as.numeric(Item_Manager$Get_Weight(Selected_Item)))==0){
+          "grey30"
+        } else {
+          "red"
+        }})
+        text(149, 72.5, paste("0", floor(as.numeric(
+          Item_Manager$Get_Tier(Selected_Item)
+        )), sep = " -> "), adj = c(1, NA),
+        col = {if(floor(as.numeric(Item_Manager$Get_Tier(Selected_Item)))==0){
+          "grey30"
+        } else {
+          "green"
+        }})
+        # Boosts
+        NBuffs <- Item_Manager$Get_Boosts_Int(Selected_Item)
+        zerod_values <- 0
+        if(length(NBuffs)>0){
+          for(boost in 1:length(NBuffs)){
+            if(floor(as.numeric(NBuffs[[boost]][2])*efficiency)>0){
+              char <- switch(floor(as.numeric(NBuffs[[boost]][2])*efficiency), "D", "C", "B", "A", "S")
+              text(113.15, 72.5-boost*5+zerod_values*5, paste("+", as.character(NBuffs[[boost]][1]),sep=""), col = "green")
+              text(149, 72.5-boost*5+zerod_values*5, char, col="green",adj=c(1,NA))
+            } else {
+              zerod_values <- zerod_values + 1
+            }
+          }
+        }
+      } else {
+        # if current gear is worn, show change
+        
+      }
+      
+      
+      
+    } else if(WINDOWSTATE$Window_Variables$Cursor_Spot == "Bag" && WINDOWSTATE$Window_Variables$Sort_Type == "2"){
+    # Select: Bag: Sort_2
+    } else if(WINDOWSTATE$Window_Variables$Cursor_Spot == "Bag" && WINDOWSTATE$Window_Variables$Sort_Type == "3"){
+    # Select: Bag: Sort_3
+    } else if(WINDOWSTATE$Window_Variables$Cursor_Spot == "Spells"){
+    # Select: Spells
+    }
+    
+    
   }
   
   # Spells

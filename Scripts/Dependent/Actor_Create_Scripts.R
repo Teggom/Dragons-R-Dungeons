@@ -60,12 +60,12 @@ Entity_IDs <- c()
   
   ret$Actor$Gear = list(
     Head = "",
-    Back = "",
     Neck = "",
+    Back = "",
     Chest = "",
     Arms = "",
-    Hand_R = "", 
-    Hand_L = "",
+    Hand_L = "", 
+    Hand_R = "",
     Belt = "",
     Legs = "",
     Feet = "",

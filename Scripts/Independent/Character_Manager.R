@@ -5,7 +5,7 @@ Character_Manager <- list()
 .Make_Class <- function(Player, Class){
   newPlayer = Player
   newPlayer$Actor$General$Gold = 200
-  newPlayer$Actor$Items = append(as.list(sample(Item_Manager$Items$Item.Name, 35)), as.list(rep("Rope", 20)))
+  newPlayer$Actor$Items = append(as.list(sample(Item_Manager$Items$Item.Name, 35)), as.list(rep("Cloth Hat", 2)))
   # CopyPaste
   if(Class == ""){
     # Set Class
@@ -318,3 +318,21 @@ Character_Manager[["Sort_Key"]] <- .Sort_Key
   return(Consumables_List)
 }
 Character_Manager[["Sort_Consumables"]] <- .Sort_Consumables
+
+
+# gets the efficiency of the items the player is wearing
+# returns a list where each index relates to the players equip list
+# follows order of names(WINDOWSTATE$Player$Actor$Gear)
+.Get_Efficiency <- function(){
+  Eff_List <- list()
+  for(slot in names(WINDOWSTATE$Player$Actor$Gear)){
+    G_Name <- WINDOWSTATE$Player$Actor$Gear[[slot]]
+    if(G_Name == "" || grepl(Item_Manager$Get_Slot(G_Name), slot)){
+      Eff_List <- append(Eff_List, 1)
+    } else {
+      Eff_List <- append(Eff_List, .5)
+    }
+  }
+  return(Eff_List)
+}
+Character_Manager[["Get_Efficiency"]] <- .Get_Efficiency

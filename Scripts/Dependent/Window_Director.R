@@ -3,7 +3,7 @@ Window_Director <- list()
 
 # Since it will be accessed frequently
 Window_Director$Switch_Variables <- list(
-  Cursor_Spot = "Select", # Bag, Gear, Spell
+  Cursor_Spot = "Select", # Bag, Equip, Spell
   # Where the cursor is in the select menu
   Select_Cursor_Spot = 1,
   # what type of sort is happening in BAG
@@ -12,8 +12,8 @@ Window_Director$Switch_Variables <- list(
   Bag_Cursor_Spot = 1,
   # Where the cursor is in Spell
   Spell_Cursor_Spot = 1,
-  # Where the cursor is in GEAR
-  Gear_Cursor_Spot = 1,
+  # Where the cursor is in Equip
+  Equip_Cursor_Spot = 1,
   # Info about the Bag
   Bag_Info = list(
     Max_Depth = 1,
@@ -37,18 +37,6 @@ Game_Start <- function(){
       Keys$Off()
       Verbose_Print(4, "Keys Turned Off")
     }
-    # tk button proc called on an invalid HWND
-    #  I need to pass the event (button press) logic
-    #  off to a separate thread. This will require
-    #  having the TK window run in a separate thread 
-    #  as far as getting commands is concerened
-    # Check_Input() should reference this thread and 
-    #  pull any data it needs from it so that the 
-    #  tk window can continue getting commands uninterrupted
-    # TODO
-    # An alternative fix might be to use a different key check event
-    # something that only gets input on key down, and orient my 
-    # logic around that. 
     if(input!=""){
       cat("You pressed the", input, "key at", WINDOWSTATE$PressedTime, "\n")
       Verbose_Print(1, paste("KEYPRESS:", input))
@@ -108,15 +96,20 @@ Window_Director$Check_Input <- .Check_Input
 .Switch_Menu <- function(input){
   # TODO Switch Menu Logic Handling here
   # Select Logic
-  ## Right 
   if(WINDOWSTATE$Window_Variables$Cursor_Spot == "Select"){
-    if(input == "Right"){
+    if(input == "Right" || input == "Enter"){
       # Bag
+      if(WINDOWSTATE$Window_Variables$Select_Cursor_Spot==1){
+        WINDOWSTATE$Window_Variables$Cursor_Spot <<- "Bag"
+      }
       # Spells
-      # Stats
-      # Continue
-      # Save
-      # Quit
+      if(WINDOWSTATE$Window_Variables$Select_Cursor_Spot==2){
+        WINDOWSTATE$Window_Variables$Cursor_Spot <<- "Spells"
+      }
+      # Stats - does nothing
+      ## TODO - advances to next area
+      ## TODO - Saves the game
+      ## TODO - Quits
     }
     if(input == "Up"){
       if(WINDOWSTATE$Window_Variables$Select_Cursor_Spot > 1){
@@ -132,19 +125,110 @@ Window_Director$Check_Input <- .Check_Input
         WINDOWSTATE$Window_Variables$Select_Cursor_Spot <<- 1
       }
     }
-  }
-  # Spell Logic
+  } else if (WINDOWSTATE$Window_Variables$Cursor_Spot == "Spells"){   # Spell Logic
   ## Up / Down
   ## pageUp / pageDown
-  # Bag Logic
+  } else if (WINDOWSTATE$Window_Variables$Cursor_Spot == "Bag"){# Bag Logic
   ## Sort type (1- Gear, 2- Consumable, 3- Key)
+    WINDOWSTATE$Window_Variables$Bag_Info$Max_Depth <<- length(WINDOWSTATE$Window_Variables$Bag_Info$Bags[[
+      switch(as.numeric(WINDOWSTATE$Window_Variables$Sort_Type), "Gear", "Consumables", "Key")
+    ]])
+    if(input == "1"){
+      WINDOWSTATE$Window_Variables$Sort_Type <<- "1"
+      WINDOWSTATE$Window_Variables$Bag_Info$Max_Depth <<- length(WINDOWSTATE$Window_Variables$Bag_Info$Bags$Gear)
+      WINDOWSTATE$Window_Variables$Bag_Info$Cur_Depth <<- 1
+    }
+    if(input == "2"){
+      WINDOWSTATE$Window_Variables$Sort_Type <<- "2"
+      WINDOWSTATE$Window_Variables$Bag_Info$Max_Depth <<- length(WINDOWSTATE$Window_Variables$Bag_Info$Bags$Consumables)
+      WINDOWSTATE$Window_Variables$Bag_Info$Cur_Depth <<- 1
+    }
+    if(input == "3"){
+      WINDOWSTATE$Window_Variables$Sort_Type <<- "3"
+      WINDOWSTATE$Window_Variables$Bag_Info$Max_Depth <<- length(WINDOWSTATE$Window_Variables$Bag_Info$Bags$Key)
+      WINDOWSTATE$Window_Variables$Bag_Info$Cur_Depth <<- 1
+    }
+    if(input == "Left"){
+      WINDOWSTATE$Window_Variables$Cursor_Spot <<- "Select"
+      
+    }
   ## Up / Down
+    if(input == "Up"){
+      if(WINDOWSTATE$Window_Variables$Bag_Cursor_Spot == 1){
+        # if not on the first page, go up a page, otherwise nothing
+        if(WINDOWSTATE$Window_Variables$Bag_Info$Cur_Depth > 1){
+          WINDOWSTATE$Window_Variables$Bag_Info$Cur_Depth <<- WINDOWSTATE$Window_Variables$Bag_Info$Cur_Depth - 1
+          WINDOWSTATE$Window_Variables$Bag_Cursor_Spot <<- 14
+        }
+      } else {
+        WINDOWSTATE$Window_Variables$Bag_Cursor_Spot <<- WINDOWSTATE$Window_Variables$Bag_Cursor_Spot - 1
+      }
+    }
+    if(input == "Down"){
+      # Bottom of page, go down if possible
+      if(WINDOWSTATE$Window_Variables$Bag_Cursor_Spot==14){
+        if(WINDOWSTATE$Window_Variables$Bag_Info$Max_Depth > WINDOWSTATE$Window_Variables$Bag_Info$Cur_Depth){
+          WINDOWSTATE$Window_Variables$Bag_Info$Cur_Depth <<- WINDOWSTATE$Window_Variables$Bag_Info$Cur_Depth + 1
+          WINDOWSTATE$Window_Variables$Bag_Cursor_Spot <<- 1
+        }
+      } else {
+        # if not at bottom of current page, go one further down
+        if(length(WINDOWSTATE$Window_Variables$Bag_Info$Bags[[
+          switch(as.numeric(WINDOWSTATE$Window_Variables$Sort_Type), "Gear", "Consumables", "Key")
+        ]][[
+          WINDOWSTATE$Window_Variables$Bag_Info$Cur_Depth
+        ]]) > WINDOWSTATE$Window_Variables$Bag_Cursor_Spot){
+          print(WINDOWSTATE$Window_Variables$Bag_Cursor_Spot)
+          WINDOWSTATE$Window_Variables$Bag_Cursor_Spot <<- WINDOWSTATE$Window_Variables$Bag_Cursor_Spot + 1
+        }
+      }
+    }
   ## pageUp/pageDown
-  ### 4 5 
+    if(input == "5"){ # page down
+      if(WINDOWSTATE$Window_Variables$Bag_Info$Cur_Depth<WINDOWSTATE$Window_Variables$Bag_Info$Max_Depth){
+        WINDOWSTATE$Window_Variables$Bag_Info$Cur_Depth <<- WINDOWSTATE$Window_Variables$Bag_Info$Cur_Depth + 1
+        WINDOWSTATE$Window_Variables$Bag_Cursor_Spot <<- 1
+      } else {
+        WINDOWSTATE$Window_Variables$Bag_Cursor_Spot <<- length(WINDOWSTATE$Window_Variables$Bag_Info$Bags[[
+          switch(as.numeric(WINDOWSTATE$Window_Variables$Sort_Type), "Gear", "Consumable", "Key")
+          ]][[
+            WINDOWSTATE$Window_Variables$Bag_Info$Cur_Depth
+          ]])
+      }
+    }
+    if(input == "4"){ # page up
+      if(WINDOWSTATE$Window_Variables$Bag_Info$Cur_Depth > 1){
+        WINDOWSTATE$Window_Variables$Bag_Info$Cur_Depth <<- WINDOWSTATE$Window_Variables$Bag_Info$Cur_Depth - 1
+      }
+      WINDOWSTATE$Window_Variables$Bag_Cursor_Spot <<- 1
+    }
   ## Right
-  # Gear Logic
-  ## Up / Down
-  ## Select (Right / Enter)
+    if(input == "Right"){
+      # TODO Enter Equip
+      WINDOWSTATE$Window_Variables$Cursor_Spot <<- "Equip"
+      
+    }
+  } else if(WINDOWSTATE$Window_Variables$Cursor_Spot == "Equip"){# Equip Logic
+    # Up down
+    if(input == "Up"){
+      if(WINDOWSTATE$Window_Variables$Equip_Cursor_Spot != 1){
+        WINDOWSTATE$Window_Variables$Equip_Cursor_Spot <<- WINDOWSTATE$Window_Variables$Equip_Cursor_Spot - 1
+      }
+    }
+    if(input == "Down"){
+      if(WINDOWSTATE$Window_Variables$Equip_Cursor_Spot != 12){
+        WINDOWSTATE$Window_Variables$Equip_Cursor_Spot <<- WINDOWSTATE$Window_Variables$Equip_Cursor_Spot + 1
+      }
+    }
+    ## Select (Right / Enter)
+    if(input == "Enter" || input == "Right"){
+      ## TODO Switch Item
+    }
+    ## leave
+    if(input == "Left"){
+      WINDOWSTATE$Window_Variables$Cursor_Spot <<- "Bag"
+    }
+  }
   Character_Manager$Prime_Bag()
 }
 Window_Director$Switch_Menu <- .Switch_Menu
@@ -184,6 +268,9 @@ Window_Director$Main_Menu <- .Main_Menu
     Chosen_Class <- WINDOWSTATE$Window_Variables$Classes[[WINDOWSTATE$Window_Variables$Pointer_Index]]
     WINDOWSTATE$Window_Variables <<- Window_Director$Switch_Variables
     WINDOWSTATE$Player <<- Character_Manager$Set_Class(Create_Functions$Human(), Chosen_Class)
+    WINDOWSTATE$Window_Variables$Bag_Info$Max_Depth <<- length(WINDOWSTATE$Window_Variables$Bag_Info$Bags[[
+      switch(as.numeric(WINDOWSTATE$Window_Variables$Sort_Type), "Gear", "Consumables", "Key")
+      ]])
   }
 }
 
