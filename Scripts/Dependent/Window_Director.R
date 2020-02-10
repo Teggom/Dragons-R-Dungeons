@@ -222,7 +222,18 @@ Window_Director$Check_Input <- .Check_Input
     }
     ## Select (Right / Enter)
     if(input == "Enter" || input == "Right"){
-      ## TODO Switch Item
+      CITEM <- WINDOWSTATE$Player$Actor$Gear[[WINDOWSTATE$Window_Variables$Equip_Cursor_Spot]]
+      
+      WINDOWSTATE$Player$Actor$Gear[[WINDOWSTATE$Window_Variables$Equip_Cursor_Spot]] <<- 
+        WINDOWSTATE$Player$Actor$Items[[WINDOWSTATE$Window_Variables$Bag_Cursor_Spot]]
+      if(CITEM==""){ # if not wearing an item, just remove that from the bag
+        WINDOWSTATE$Player$Actor$Items <<- WINDOWSTATE$Player$Actor$Items[-WINDOWSTATE$Window_Variables$Bag_Cursor_Spot]
+      } else { # if wearing an item, add it to the bag 
+        WINDOWSTATE$Player$Actor$Items <<- WINDOWSTATE$Player$Actor$Items[-WINDOWSTATE$Window_Variables$Bag_Cursor_Spot]
+        WINDOWSTATE$Player$Actor$Items <<- append(WINDOWSTATE$Player$Actor$Items, CITEM)
+        #TODO sort bag now
+        Character_Manager$Sort_Bag()
+      }
     }
     ## leave
     if(input == "Left"){
